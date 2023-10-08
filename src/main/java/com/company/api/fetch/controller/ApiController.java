@@ -64,34 +64,34 @@ public class ApiController {
 	@PostMapping(path = "spend", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> spendRewards(@RequestBody Map<String, Integer> spend) {
 		if (spend != null && spend.get("points") != null) {
-			int amount = spend.get("points");
+			int sum = spend.get("points");
 			List<Rewards> rewardsList = rewardsService.getAllRewards();
 			if (rewardsList != null) {
 				Collections.sort(rewardsList);
 				HashMap<String, Integer> rewardsMap = new HashMap<String, Integer>();
-				HashMap<Integer, Integer> updatePoints = new HashMap<Integer, Integer>();
-				for (int i = 0; i < rewardsList.size() && amount != 0; i++) {
+				HashMap<Integer, Integer> updateRewards = new HashMap<Integer, Integer>();
+				for (int i = 0; i < rewardsList.size() && sum != 0; i++) {
 					Rewards r = rewardsList.get(i);
-					if (amount > r.getPoints()) {
-						amount = amount - r.getPoints();
-						updatePoints.put(r.getPointsId(), 0);
+					if (sum > r.getPoints()) {
+						sum = sum - r.getPoints();
+						updateRewards.put(r.getPointsId(), 0);
 						if (rewardsMap.containsKey(r.getPayer())) {
 							rewardsMap.put(r.getPayer(), rewardsMap.get(r.getPayer()) - r.getPoints());
 						} else {
 							rewardsMap.put(r.getPayer(), 0 - r.getPoints());
 						}
 					} else {
-						updatePoints.put(r.getPointsId(), r.getPoints() - amount);
+						updateRewards.put(r.getPointsId(), r.getPoints() - sum);
 						if (rewardsMap.containsKey(r.getPayer())) {
-							rewardsMap.put(r.getPayer(), rewardsMap.get(r.getPayer()) - amount);
+							rewardsMap.put(r.getPayer(), rewardsMap.get(r.getPayer()) - sum);
 						} else {
-							rewardsMap.put(r.getPayer(), 0 - amount);
+							rewardsMap.put(r.getPayer(), 0 - sum);
 						}
-						amount = 0;
+						sum = 0;
 					}
 				}
-				if (amount == 0) {
-					updatePoints.forEach((key, value) -> rewardsService.updateRewards(key, value));
+				if (sum == 0) {
+					updateRewards.forEach((key, value) -> rewardsService.updateRewards(key, value));
 					return new ResponseEntity<String>(new Gson().toJson(rewardsMap), HttpStatus.OK);
 				}
 			}
