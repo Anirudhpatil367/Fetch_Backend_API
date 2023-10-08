@@ -1,0 +1,4 @@
+1.Why did you choose the tools, libraries, and language you used for the coding exercise?
+In my earlier professiona as a full stack developer, I was familiar in creating backend components using Java. While pursuing my masters, I observed that a major role of enterprise-level backend systems that continue to depend on Java. With the  contrast of Spring Boot, the process of creating APIs that became both straightforward and efficient.
+
+on the other way, my aim is to to construct a REST API that is not only scalable but easy to maintain, by following best practise and maintaining company standards. To fulfill this, I used a robost development stack consisting Java, Spring Boot, Spring Data JPA, Hibernate, and Maven. The combination of all these proved a highly responsive in meeting the project requirements.
