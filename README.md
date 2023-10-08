@@ -2,9 +2,9 @@
 
 Libraries, Tools and language used:
 
-Eclipse
-MySQL Workbench 8.0.34
-Postman
-Java, JPA
-Maven
-SpringBoot
+1.Eclipse<br>
+2.MySQL Workbench 8.0.34<br>
+3.Postman<br>
+4.Java<br>
+5.Maven<br>
+6.SpringBoot<br>
