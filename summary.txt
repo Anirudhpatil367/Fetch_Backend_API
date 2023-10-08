@@ -2,3 +2,15 @@
 In my earlier professiona as a full stack developer, I was familiar in creating backend components using Java. While pursuing my masters, I observed that a major role of enterprise-level backend systems that continue to depend on Java. With the  contrast of Spring Boot, the process of creating APIs that became both straightforward and efficient.
 
 on the other way, my aim is to to construct a REST API that is not only scalable but easy to maintain, by following best practise and maintaining company standards. To fulfill this, I used a robost development stack consisting Java, Spring Boot, Spring Data JPA, Hibernate, and Maven. The combination of all these proved a highly responsive in meeting the project requirements.
+
+2) What are the advantages and disadvantages of your solution?
+
+Disadvantage:
+the API aligns with the specified requirements, there are several important aspects to consider for enhancement.
+
+Advantage:
+The API is built using Spring Boot, known for its scalability, easily to maintain maintain, making it highly effective. provided that a most number of backend systems works on Java, combining these API with other systems is very easy.
+
+3) What has been a favorite school/personal project thus far? What about it that challenged you?
+
+During my final year of engineering , i worked on a project that was mainly on "Detecting of covid-19" with the help of chest x-ray as the input, my role was to train the x-ray image and create a model by which the ouput would obtained, due to limited system specification, i ran the whole project in Google colab where it was very easy to build the model and our team got 2nd prize for that project.
